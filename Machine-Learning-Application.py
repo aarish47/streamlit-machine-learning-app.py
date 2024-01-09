@@ -84,17 +84,13 @@ def get_classifier(classifier_name, params):
 if st.checkbox('Check the code!') :
     with st.echo():
         clf = get_classifier(classifier_name, params)
-
-# train test split 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1234) 
-
-# training the data 
-clf.fit(x_train, y_train)
-y_pred = clf.predict(x_test)
-
-# checking the accuracy score
-acc = accuracy_score(y_test, y_pred)
-        
+        # train test split 
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1234) 
+        # training the data 
+        clf.fit(x_train, y_train)
+        y_pred = clf.predict(x_test)
+        # checking the accuracy score
+        acc = accuracy_score(y_test, y_pred)
 
 # get the classifier
 clf = get_classifier(classifier_name, params)
