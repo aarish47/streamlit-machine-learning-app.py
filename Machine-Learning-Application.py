@@ -81,7 +81,7 @@ def get_classifier(classifier_name, params):
                                            max_depth=params['max_depth'], random_state=1234)
     return clf
  
-if st.checkbox('Check the code!') :
+if st.button('Check the code!') :
     with st.echo():
         clf = get_classifier(classifier_name, params)
         # train test split 
