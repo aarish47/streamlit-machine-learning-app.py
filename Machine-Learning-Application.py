@@ -81,6 +81,22 @@ def get_classifier(classifier_name, params):
                                            max_depth=params['max_depth'], random_state=1234)
     return clf
  
+if st.button('Check the code!') :
+    with st.echo():
+        clf = get_classifier(classifier_name, params)
+
+# train test split 
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=1234) 
+
+# training the data 
+clf.fit(x_train, y_train)
+y_pred = clf.predict(x_test)
+
+# checking the accuracy score
+acc = accuracy_score(y_test, y_pred)
+        
+
+# get the classifier
 clf = get_classifier(classifier_name, params)
 
 # train test split 
@@ -115,5 +131,3 @@ plt.colorbar()
 # showing our figure
 # plt.show()
 st.pyplot(fig)
-
-
